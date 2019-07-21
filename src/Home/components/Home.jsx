@@ -24,16 +24,16 @@ class Home extends Component {
         this.props.performSearch(value);
     }
 
-    searchSelect(event) {
-        let selectedPlanet = {};
-        this.props.planets.map(value => {
-            if (value.name === event) {
-                selectedPlanet = value;
-            }
-            return null;
-        });
+    searchSelect(event, item) {
+        // let selectedPlanet = {};
+        // this.props.planets.map(value => {
+        //     if (value.name === event) {
+        //         selectedPlanet = value;
+        //     }
+        //     return null;
+        // });
         this.props.onChangeSearch(event);
-        this.props.setSelectedSearchedPlanet(selectedPlanet);
+        this.props.setSelectedSearchedPlanet(item);
     }
 
     render() {

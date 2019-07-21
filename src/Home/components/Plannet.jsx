@@ -2,7 +2,6 @@ import React from 'react';
 
 // This component is used for searching movies.
 export const Planet = props => {
-    console.log(props);
   return (
     <div className="card text-center">
         <div className="card-header">

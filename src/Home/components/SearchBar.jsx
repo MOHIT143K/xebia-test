@@ -3,6 +3,17 @@ import ReactAutocomplete from 'react-autocomplete';
 
 // This component is used for searching planet.
 export const SearchBar = props => {
+  let menuStyle = {
+    borderRadius: '3px',
+    boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
+    background: 'rgba(255, 255, 255)',
+    padding: '2px 0',
+    fontSize: '90%',
+    position: 'fixed',
+    overflow: 'auto',
+    maxHeight: '60%',
+    zIndex: '1'
+  };
   return (
     <div className="row">
       <div className="col-sm-12">
@@ -13,17 +24,7 @@ export const SearchBar = props => {
               item.name.toLowerCase().indexOf(value.toLowerCase()) > -1
             }
             getItemValue={item => item.name}
-            menuStyle={{
-              borderRadius: '3px',
-              boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
-              background: 'rgba(255, 255, 255)',
-              padding: '2px 0',
-              fontSize: '90%',
-              position: 'fixed',
-              overflow: 'auto',
-              maxHeight: '60%',
-              zIndex: '1'
-            }}
+            menuStyle={menuStyle}
             renderItem={(item, highlighted) => (
               <div
                 key={Math.random()}
@@ -45,7 +46,7 @@ export const SearchBar = props => {
             }}
             value={props.searchTerm}
             onChange={e => props.searchPlanet(e.target.value)}
-            onSelect={value => props.searchSelect(value)}
+            onSelect={(value, item) => props.searchSelect(value, item)}
             wrapperStyle={{ width: '100%' }}
           />
         </div>
