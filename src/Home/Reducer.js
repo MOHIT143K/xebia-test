@@ -2,37 +2,86 @@ import * as ActionTypes from './ActionTypes';
 
 // Default State for Home Module
 const initialState = {
-    searchedPlanets: {
-        results: []
-    },
-    searchTerm: '',
-    selectedPlanet: {}
+    resturants: [{
+        name: 'Barbeque',
+        rating: 4.4,
+        locations: ['Pan India'],
+        offers: [{
+            name: 'Food Voucher',
+        }, {
+            name: 'Buy a gift'
+        }]
+    }, {
+        name: 'Faasos',
+        rating: 4.4,
+        locations: ['Mumbai', 'Pune', 'Nagpur', 'Delhi', 'Goa', 'Gurgaon'], 
+        offers: [{
+            name: 'Food Voucher',
+        }, {
+            name: 'Buy a gift'
+        }]
+    }, {
+        name: 'Bite Club',
+        rating: 4.4,
+        locations: ['Mumbai', 'Pune', 'Nagpur', 'Delhi', 'Goa', 'Gurgaon'], 
+        offers: [{
+            name: 'Food Voucher',
+        }, {
+            name: 'Buy a gift'
+        }]
+    }, {
+        name: 'Good Bowl',
+        rating: 4.4,
+        locations: ['Mumbai', 'Pune', 'Nagpur', 'Delhi', 'Goa', 'Gurgaon'],
+        offers: [{
+            name: 'Food Voucher',
+        }, {
+            name: 'Buy a gift'
+        }]
+    }, {
+        name: 'Barbeque',
+        rating: 4.4,
+        locations: ['Pan India'],
+        offers: [{
+            name: 'Food Voucher',
+        }, {
+            name: 'Buy a gift'
+        }]
+    }, {
+        name: 'Faasos',
+        rating: 4.4,
+        locations: ['Mumbai', 'Pune', 'Nagpur', 'Delhi', 'Goa', 'Gurgaon'], 
+        offers: [{
+            name: 'Food Voucher',
+        }, {
+            name: 'Buy a gift'
+        }]
+    }, {
+        name: 'Bite Club',
+        rating: 4.4,
+        locations: ['Mumbai', 'Pune', 'Nagpur', 'Delhi', 'Goa', 'Gurgaon'], 
+        offers: [{
+            name: 'Food Voucher',
+        }, {
+            name: 'Buy a gift'
+        }]
+    }, {
+        name: 'Good Bowl',
+        rating: 4.4,
+        locations: ['Mumbai', 'Pune', 'Nagpur', 'Delhi', 'Goa', 'Gurgaon'],
+        offers: [{
+            name: 'Food Voucher',
+        }, {
+            name: 'Buy a gift'
+        }]
+    }]
 };
 
 export default function (state = initialState, action) {
     switch (action.type) {
 
-        case ActionTypes.SET_SEARCHED_PLANETS:
-            return {
-                ...state,
-                searchedPlanets: {
-                    results: [...action.payload.results],
-                }
-            }
-
-        case ActionTypes.ON_CHANGE_SEARCH:
-            return Object.assign({}, state, {
-                searchedPlanets: {
-                    results: []
-                },
-                searchTerm: action.payload
-            });
-        
-        case ActionTypes.SET_SELECTED_SEARCHED_PLANETS: 
-            return Object.assign({}, state, {
-                selectedPlanet : action.payload
-            })
-
+        case ActionTypes.ON_LOAD:
+            return Object.assign({}, state, initialState);
         default:
             return state;
     }

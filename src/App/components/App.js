@@ -3,8 +3,8 @@ import '../App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // Importing components for routes.
-import Login from '../../Login/components/Login';
 import Home from '../../Home/components/Home';
+import Resturant from '../../Home/components/Resturant';
 
 // This is the main container which has all the routes.
 class App extends Component {
@@ -13,10 +13,8 @@ class App extends Component {
         return (
             <Router>
                 <div className="App">
-                    <div>
-                        <Route exact path="/" component={Login} />
-                        <Route exact path="/home" component={Home} />
-                    </div>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/resturant" component={Resturant} />
                 </div>
             </Router>
         );
